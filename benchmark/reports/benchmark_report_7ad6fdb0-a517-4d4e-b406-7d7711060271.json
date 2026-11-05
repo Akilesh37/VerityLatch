@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "total_scenarios": 200,
+    "malicious_scenarios": 150,
+    "legitimate_scenarios": 50,
+    "baseline_attack_success_rate": 100.0,
+    "protected_attack_success_rate": 0.0,
+    "attack_block_rate": 100.0,
+    "unauthorized_action_execution_rate": 0.0,
+    "legitimate_task_completion_rate": 100.0,
+    "false_positive_rate": 0.0,
+    "median_security_latency_ms": 3.24,
+    "p95_security_latency_ms": 4.03,
+    "human_approval_rate": 0.0,
+    "total_duration_seconds": 1.01
+  },
+  "timestamp": "2026-11-05T18:16:44.001195+00:00"
+}

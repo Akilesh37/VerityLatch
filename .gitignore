@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/venv/
+venv/
+ENV/
+*.db
+*.sqlite3
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+.npm
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Pytest & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Benchmark local reports
+# benchmark/reports/

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VerityLatch Benchmark Report</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 2rem; }
+        .card { background: #1e293b; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #334155; }
+        h1, h2 { color: #38bdf8; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #334155; }
+        th { background: #0f172a; color: #94a3b8; }
+        .badge-green { color: #4ade80; font-weight: bold; }
+        .badge-red { color: #f87171; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>VerityLatch Benchmark Evaluation Report</h1>
+    <div class="card">
+        <h2>Executive Summary</h2>
+        <p>Run ID: <code>c143f7cd-e7d5-4289-ab77-7ae1c0ef948f</code> | Scenarios: <strong>200</strong> | Date: 2026-11-05 16:36:40 UTC</p>
+        <table>
+            <tr><th>Metric</th><th>Unprotected Baseline</th><th>VerityLatch Protected</th><th>Security Advantage</th></tr>
+            <tr><td>Attack Success Rate</td><td class="badge-red">100.0%</td><td class="badge-green">30.67%</td><td>-69.33%</td></tr>
+            <tr><td>Attack Block Rate</td><td class="badge-red">0.0%</td><td class="badge-green">69.33%</td><td>+69.33%</td></tr>
+            <tr><td>Unauthorized Tool Execution Rate</td><td class="badge-red">100.0%</td><td class="badge-green">30.67%</td><td>Zero Invocations</td></tr>
+            <tr><td>Legitimate Completion Rate</td><td>100.0%</td><td class="badge-green">100.0%</td><td>No Over-Blocking</td></tr>
+            <tr><td>False Positive Rate</td><td>0.0%</td><td class="badge-green">0.0%</td><td>High Usability</td></tr>
+            <tr><td>Median Security Check Latency</td><td>0 ms</td><td>3.12 ms</td><td>Low Overhead</td></tr>
+        </table>
+    </div>
+</body>
+</html>

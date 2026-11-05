@@ -1,0 +1,67 @@
+name: VerityLatch CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  backend-test-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+
+      - name: Run Guardian Bypass Test Suite
+        env:
+          PYTHONPATH: backend:.
+        run: |
+          pytest backend/tests/test_guardian_bypass.py -v
+
+      - name: Execute End-to-End Attack Demonstration Proof
+        env:
+          PYTHONPATH: backend:.
+        run: |
+          python -m benchmark.run_attack_demo --scenario indirect_prompt_injection
+
+      - name: Execute 200-Scenario Empirical Benchmark Suite
+        env:
+          PYTHONPATH: backend:.
+        run: |
+          python -m benchmark.run_all
+
+      - name: Upload Benchmark Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-reports
+          path: benchmark/reports/
+
+  frontend-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Frontend Dependencies
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Build Frontend Application
+        working-directory: ./frontend
+        run: npm run build

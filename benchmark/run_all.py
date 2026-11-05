@@ -1,4 +1,10 @@
 import sys
+import os
+
+# Ensure backend package is in python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../backend")))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from app.core.database import engine, Base, SessionLocal
 from app.core.seed import seed_database
 from benchmark.runner.suite import run_benchmark_suite

@@ -1,6 +1,12 @@
 import argparse
 import sys
+import os
 import json
+
+# Ensure backend package is in python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../backend")))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from datetime import datetime, timezone
 from app.core.database import engine, Base, SessionLocal
 from app.core.seed import seed_database

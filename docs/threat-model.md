@@ -57,3 +57,4 @@ The objective is to establish deterministic, fail-closed boundaries such that ev
 2. **Fail-Closed on Policy Engine Failure**: If OPA or the policy evaluation service crashes, times out, or produces malformed output, the Guardian automatically issues a `DENY` decision.
 3. **Execution Layer Verification**: The protected tool executor will never execute an operation without validating the cryptographic authorization ticket, checking its expiration, verifying payload SHA-256 integrity, and burning the single-use ticket.
 4. **Context Isolation**: Untrusted context (e.g. content extracted from user tickets, uploaded files, or external web queries) can never grant privileges, override system policies, or downgrade risk classifications.
+

@@ -172,3 +172,4 @@ def reject_request(
     db.commit()
     db.refresh(req)
     return format_approval_response(req)
+

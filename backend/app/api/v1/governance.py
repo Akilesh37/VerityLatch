@@ -39,3 +39,4 @@ def get_governance_overview(db: Session = Depends(get_db)) -> Dict[str, Any]:
 def get_risk_register(db: Session = Depends(get_db)):
     risks = db.query(GovernanceRisk).order_by(GovernanceRisk.updated_at.desc()).all()
     return risks
+

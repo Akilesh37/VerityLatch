@@ -88,3 +88,4 @@ class RiskEngine:
         return final_score, level, factors, recommendation
 
 risk_engine = RiskEngine()
+

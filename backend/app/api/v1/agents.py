@@ -108,3 +108,4 @@ def update_agent(
 def list_tools(db: Session = Depends(get_db)):
     tools = db.query(Tool).all()
     return tools
+

@@ -99,3 +99,4 @@ export const api = {
   triggerBenchmark: (scenarios_count: number = 200) =>
     request<any>('/benchmark/run', { method: 'POST', body: JSON.stringify({ scenarios_count }) }),
 };
+

@@ -72,3 +72,4 @@ def verify_audit_ledger(db: Session = Depends(get_db)):
         "broken_link_id": None,
         "message": f"Audit ledger integrity verified successfully. All {verified_count} events cryptographically linked."
     }
+

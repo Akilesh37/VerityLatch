@@ -135,3 +135,4 @@ Returns latest 200-scenario benchmark statistics and comparative category metric
 
 ### `POST /benchmark/run`
 Triggers the full 200-scenario benchmark run.
+

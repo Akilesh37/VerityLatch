@@ -75,3 +75,4 @@ In compliance with honest engineering communication:
 - VerityLatch **does not** claim that all prompt injection attacks can be detected via heuristic or LLM pattern matching.
 - Instead, the fundamental guarantee is that **unauthorized actions cannot execute regardless of whether the LLM was manipulated**.
 - VerityLatch **does not** claim compliance certification simply because it maps to the NIST AI RMF.
+

@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from app.core.database import get_db
 from app.models.entities import Execution, User
-from app.schemas.schemas import ExecutionCreate, ExecutionResponse
+from app.schemas.schemas import ExecutionCreate, ExecutionResponse, ExecutionDetailResponse
 from app.agents.orchestrator import agent_orchestrator
 from app.api.deps import get_current_user
 
@@ -23,7 +23,7 @@ def list_executions(
         query = query.filter(Execution.mode == mode)
     return query.order_by(Execution.created_at.desc()).limit(limit).all()
 
-@router.get("/{execution_id}", response_model=ExecutionResponse)
+@router.get("/{execution_id}", response_model=ExecutionDetailResponse)
 def get_execution(execution_id: str, db: Session = Depends(get_db)):
     execution = db.query(Execution).filter(Execution.id == execution_id).first()
     if not execution:
@@ -46,3 +46,4 @@ def run_execution(
         db=db
     )
     return result
+

@@ -77,3 +77,4 @@ To re-run the complete 200-scenario benchmark suite and regenerate JSON, CSV, an
 python -m benchmark.run_all
 ```
 Reports are automatically timestamped and saved to `benchmark/reports/`.
+

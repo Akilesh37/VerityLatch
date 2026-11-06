@@ -61,3 +61,4 @@ Artifacts produced from the benchmark suite:
 - `benchmark/reports/benchmark_report_*.json`: Machine-readable summary and metadata.
 - `benchmark/reports/benchmark_results_*.csv`: Per-scenario audit record with individual decision and latency values.
 - `benchmark/reports/benchmark_report_*.html`: Rendered executive report for stakeholder presentation.
+

@@ -202,3 +202,4 @@ export const AgentDetails: React.FC = () => {
     </div>
   );
 };
+

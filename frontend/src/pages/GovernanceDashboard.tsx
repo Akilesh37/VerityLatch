@@ -147,3 +147,4 @@ export const GovernanceDashboard: React.FC = () => {
     </div>
   );
 };
+

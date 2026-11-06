@@ -79,3 +79,4 @@ def run_scenario(
         "trace_steps": result.get("trace_steps", []),
         "tool_result": result.get("tool_result")
     }
+

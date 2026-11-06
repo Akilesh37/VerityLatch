@@ -58,3 +58,4 @@ def get_dashboard_metrics(db: Session = Depends(get_db)) -> Dict[str, Any]:
             "critical": crit_risk
         }
     }
+

@@ -155,3 +155,4 @@ VerityLatch implements 5 independent security rings:
 | **Ring 3: Deterministic Risk Engine** | Calculate impact & blast radius | 0–100 Weighted scoring formula | Critical risk triggers approval/deny |
 | **Ring 4: OPA Policy Boundary** | Authorize agent, action & resource | Rego declarative policy evaluation | Default-DENY (Fail Closed) |
 | **Ring 5: Tool Execution Verification**| Cryptographic ticket verification | SHA-256 payload check & replay burn | Execution Refused (Zero invocation) |
+

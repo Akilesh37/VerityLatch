@@ -51,3 +51,4 @@ def update_incident_status(
     db.commit()
     db.refresh(incident)
     return incident
+

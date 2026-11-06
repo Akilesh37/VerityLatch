@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { ToastProvider } from './contexts/ToastContext';
 import { AppLayout } from './layouts/AppLayout';
 import { LoginPage } from './pages/LoginPage';
 import { OverviewDashboard } from './pages/OverviewDashboard';
@@ -37,35 +38,38 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
 export const App: React.FC = () => {
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
+      <ToastProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
 
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-                <AppLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route index element={<OverviewDashboard />} />
-            <Route path="agents" element={<AgentRegistry />} />
-            <Route path="agents/:id" element={<AgentDetails />} />
-            <Route path="executions" element={<ExecutionMonitoring />} />
-            <Route path="policies" element={<PolicyManagement />} />
-            <Route path="approvals" element={<ApprovalCenter />} />
-            <Route path="incidents" element={<SecurityIncidentCenter />} />
-            <Route path="redteam" element={<RedTeamLab />} />
-            <Route path="benchmark" element={<BenchmarkDashboard />} />
-            <Route path="audit" element={<AuditExplorer />} />
-            <Route path="governance" element={<GovernanceDashboard />} />
-            <Route path="settings" element={<SystemSettings />} />
-          </Route>
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <AppLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<OverviewDashboard />} />
+              <Route path="agents" element={<AgentRegistry />} />
+              <Route path="agents/:id" element={<AgentDetails />} />
+              <Route path="executions" element={<ExecutionMonitoring />} />
+              <Route path="policies" element={<PolicyManagement />} />
+              <Route path="approvals" element={<ApprovalCenter />} />
+              <Route path="incidents" element={<SecurityIncidentCenter />} />
+              <Route path="redteam" element={<RedTeamLab />} />
+              <Route path="benchmark" element={<BenchmarkDashboard />} />
+              <Route path="audit" element={<AuditExplorer />} />
+              <Route path="governance" element={<GovernanceDashboard />} />
+              <Route path="settings" element={<SystemSettings />} />
+            </Route>
 
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </BrowserRouter>
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </BrowserRouter>
+      </ToastProvider>
     </AuthProvider>
   );
 };
+

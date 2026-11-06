@@ -55,3 +55,4 @@ def trigger_benchmark(request: BenchmarkRunRequest, db: Session = Depends(get_db
     from benchmark.runner.suite import run_benchmark_suite
     summary = run_benchmark_suite(db=db, scenarios_count=request.scenarios_count)
     return summary
+

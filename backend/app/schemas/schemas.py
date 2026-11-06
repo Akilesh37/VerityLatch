@@ -122,6 +122,28 @@ class ExecutionCreate(BaseModel):
     mode: str = "protected"  # protected or baseline
     untrusted_context: Optional[str] = None
 
+class ActionRequestDetail(BaseModel):
+    id: str
+    tool_name: str
+    action_name: str
+    resource: str
+    environment: str
+    arguments: Dict[str, Any] = {}
+    payload_hash: str
+    data_classification: str
+    context_provenance: str
+    risk_score: float
+    risk_level: str
+    risk_factors: List[str] = []
+    decision: str
+    policy_matched: Optional[str] = None
+    reason: Optional[str] = None
+    tool_executed: bool
+    execution_result: Optional[Any] = None
+    created_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
+
 class ExecutionResponse(BaseModel):
     id: str
     agent_id: str
@@ -138,6 +160,9 @@ class ExecutionResponse(BaseModel):
     completed_at: Optional[datetime] = None
 
     model_config = ConfigDict(from_attributes=True)
+
+class ExecutionDetailResponse(ExecutionResponse):
+    action_requests: List[ActionRequestDetail] = []
 
 # --- Approval Schemas ---
 class ApprovalDecisionRequest(BaseModel):

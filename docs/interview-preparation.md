@@ -64,3 +64,4 @@ This guide prepares software engineers, security architects, and GenAI specialis
 - **Map**: Context Provenance, Data Classification (PUBLIC, INTERNAL, CONFIDENTIAL, RESTRICTED).
 - **Measure**: 200-scenario benchmark measuring Attack Block Rate, False Positive Rate, and Latency.
 - **Manage**: Guardian Runtime Gateway and Human-in-the-Loop approval center.
+

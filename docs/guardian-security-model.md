@@ -137,3 +137,4 @@ In accordance with rigorous engineering principles, VerityLatch acknowledges cle
 ## 6. Summary: The Defensible Claim
 
 > **"VerityLatch enforces authorization at the controlled action execution boundary, independently of whether the underlying LLM follows its instructions."**
+
